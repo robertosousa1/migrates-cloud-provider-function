@@ -7,5 +7,10 @@ provider:
   lambdaHashingVersion: 20201221
 
 functions:
-  hello:
-    handler: handler.hello
+  randomCommit:
+    handler: handler.randomCommit
+    events:
+      - http:
+          path: commit
+          method: get
+          cors: true
